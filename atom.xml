@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Glaube&#39;s blog</title>
+  
+  <subtitle>Talk is cheap,show me your codes.</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-12-07T01:08:14.215Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Glaube</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VScode问题汇总</title>
+    <link href="http://example.com/2021/12/07/VScode%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://example.com/2021/12/07/VScode%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</id>
+    <published>2021-12-07T08:35:15.000Z</published>
+    <updated>2021-12-07T01:08:14.215Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="2021-12-7"><a href="#2021-12-7" class="headerlink" title="2021-12-7"></a>2021-12-7</h4><h5 id="workspace"><a href="#workspace" class="headerlink" title="workspace"></a>workspace</h5><p>前几天在写一个课程的大作业时用了latex，因为初次使用，有很多不懂的。使用的工具是Texlive+VScode+sumatraPDF，看着大佬的教程本来一切都很顺利，但下午准备接着写的时候莫名其妙的报错了，也没Google到相关信息。我以为是自己改动模板的原因，于是把之前下载的模板解压又编译了以下，同样报错。经过摸索，最后发现了问题：之前看的教程是把Latex的配置文件放在工作区的.code-workspace中的，我后来打开的时候直接打开了.tex和.sty文件，所以会报错。</p><p><strong>解决方法</strong>：在对应文件夹下打开.code-workspace文件，进入工作区，再做你想做的事情。</p>]]></content>
+    
+    
+    <summary type="html">记录我在使用VScode过程中遇见的一些小问题。</summary>
+    
+    
+    
+    <category term="long-time" scheme="http://example.com/categories/long-time/"/>
+    
+    
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
+    <category term="VScode" scheme="http://example.com/tags/VScode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>信号处理中的一些概念</title>
+    <link href="http://example.com/2021/12/07/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/"/>
+    <id>http://example.com/2021/12/07/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</id>
+    <published>2021-12-06T18:32:30.000Z</published>
+    <updated>2021-12-10T12:59:14.798Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3><p>以下内容可能存在错误，请带着批判的眼光阅读。我在发现错误或有新理解后会持续更新。</p><h3 id="2021-12-6"><a href="#2021-12-6" class="headerlink" title="2021-12-6"></a>2021-12-6</h3><h4 id="SIR-SCR-SNR"><a href="#SIR-SCR-SNR" class="headerlink" title="SIR SCR SNR"></a>SIR SCR SNR</h4><p>最近在看雷达信号处理基础（第二版）这本书，有三个概念：<strong>SIR（Signal-to-Interference ratio）</strong>、<strong>SCR（Signal-to-Clutter ratio）</strong>和<strong>SNR（Signal-to-noise ratio）</strong>。</p><p>先说信噪比SNR，这个是三个概念中最常见的，为有用信号功率和噪声功率的比值，即</p><script type="math/tex; mode=display">\mathrm{SNR}=\frac{P_{\text {signal }}}{P_{\text {noise }}}</script><p>对于一个信号，它由期望信号和干扰信号组成，信干比SIR为期望信号功率和干扰信号功率的比值，即</p><script type="math/tex; mode=display">\mathrm{SIR}=\frac{P_{\text {signal}}}{P_{\text {interference}}}</script><p>这是传统的SIR，另一种变异版本为能量SIR，定义为期望信号的总能量和干扰信号声功率之比，即</p><script type="math/tex; mode=display">\mathrm{SIR}=\frac{E_{\text {signal}}}{P_{\text {interference}}}</script><p>信杂比SCR是接收信号功率与接收杂波功率之比。在很多情况下，影响雷达检测性能的主要干扰是杂波而不是噪声，所以SCR往往比SNR更有用。</p><script type="math/tex; mode=display">\mathrm{SCR}=\frac{P_{\text {receive}}}{P_{\text {clutter}}}</script><h4 id="sinc-asinc"><a href="#sinc-asinc" class="headerlink" title="sinc  asinc"></a>sinc  asinc</h4><p>在数字信号中，使用<strong>归一化的sinc函数</strong>，通常定义为</p><script type="math/tex; mode=display">\operatorname{sinc}(x)=\frac{\sin (\pi x)}{\pi x}</script><p>在数学中则使用<strong>非归一化的sinc函数</strong>，定义为</p><script type="math/tex; mode=display">\operatorname{sinc}(x)=\frac{\sin (x)}{x}</script><p>雷达信号处理基础（第二版）这本书中提到了asinc，即混叠sinc函数，我在Google上没搜到相关概念，中译版的脚注（P193）上说是sinc函数的离散形式，又叫做狄利克雷函数。</p><h3 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021-12-10"></a>2021-12-10</h3><h4 id="一个等比数列求和"><a href="#一个等比数列求和" class="headerlink" title="一个等比数列求和"></a>一个等比数列求和</h4><p>最近看书经常见到这个等比数列，之前学天线原理的时候也是，记录一下</p><script type="math/tex; mode=display">\sum_{m=0}^{M-1} e^{-j(\omega-\omega_{0}) m} = \tfrac{\sin\left[(\omega -\omega_{0})\frac{M}{2}] \right]}{\sin \left[(\omega -\omega_{0})\frac{1}{2} \right]} {e^{[-j(\omega-\omega_{0}) \frac{M-1}{2}]}}</script><h4 id="一个ln的展开式"><a href="#一个ln的展开式" class="headerlink" title="一个ln的展开式"></a>一个ln的展开式</h4><p>见到了一个不太常见的ln(x)在x=1处的展开式：</p><script type="math/tex; mode=display">ln(x) = \frac{x-1}{x} + \frac{1}{2} (\frac{x-1}{x})^{2}+...+\frac{1}{n} (\frac{x-1}{x})^{n}+...</script><p>推导过程：</p><script type="math/tex; mode=display">ln(x) = -ln(\frac{1}{x})= -ln(1-\frac{x-1}{x})= \sum_{n=1}^{\infty} \frac{(\frac{x-1}{x})^{n}}{n}</script>]]></content>
+    
+    
+    <summary type="html">记录信号处理中的一些概念，以备日后查阅。</summary>
+    
+    
+    
+    <category term="Signal Processing" scheme="http://example.com/categories/Signal-Processing/"/>
+    
+    
+    <category term="Radar" scheme="http://example.com/tags/Radar/"/>
+    
+    <category term="Signal Processing" scheme="http://example.com/tags/Signal-Processing/"/>
+    
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora语法</title>
+    <link href="http://example.com/2021/12/06/Typora%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2021/12/06/Typora%E8%AF%AD%E6%B3%95/</id>
+    <published>2021-12-06T09:21:28.000Z</published>
+    <updated>2021-12-06T01:44:05.469Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="2021-12-6-图片居中与并排显示"><a href="#2021-12-6-图片居中与并排显示" class="headerlink" title="2021-12-6 图片居中与并排显示"></a>2021-12-6 图片居中与并排显示</h5><p>参考<a href="https://blog.csdn.net/qq_21808961/article/details/80666589">这篇博客</a>，实现图片居中</p><figure class="highlight markdown"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">center</span>&gt;</span></span><br><span class="hljs-code">    &lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;40%&quot; &gt;</span><br><span class="hljs-code">&lt;/center&gt;</span><br></code></pre></td></tr></table></figure><p>具体效果</p><center>    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "40%" ></center><p>实现两张图片并排显示</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">center</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;half&quot;</span> &gt;</span></span><br><span class="hljs-code">    &lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;40%&quot; /&gt;&lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;40%&quot; /&gt;</span><br><span class="hljs-code">&lt;/center&gt;</span><br></code></pre></td></tr></table></figure><p>一定注意不要换行！宽度自行调整，可以不用百分比，改成具体的数字，效果如下</p><center class = "half" >    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "40%" /><img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "40%" /></center><p>以此类推三张有</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">center</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;half&quot;</span> &gt;</span></span><br><span class="hljs-code">    &lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;&lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;&lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;</span><br><span class="hljs-code">&lt;/center&gt;</span><br></code></pre></td></tr></table></figure><p>效果如下</p><center class = "half" >    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /><img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /><img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /></center><p>对于左对齐并排，代码如下</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span> <span class="hljs-attr">class</span> = <span class="hljs-string">&quot;third&quot;</span> &gt;</span></span><br><span class="hljs-code">    &lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;&lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;&lt;img src = &quot;https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png&quot; width = &quot;30%&quot; /&gt;</span><br><span class="hljs-code">&lt;/figure&gt;</span><br></code></pre></td></tr></table></figure><p>效果为</p><figure class = "third" >    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /><img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /><img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "30%" /></figure>]]></content>
+    
+    
+    <summary type="html">Typora中的语法记录。</summary>
+    
+    
+    
+    <category term="long-time" scheme="http://example.com/categories/long-time/"/>
+    
+    
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
+    <category term="Typora" scheme="http://example.com/tags/Typora/"/>
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git常用命令</title>
+    <link href="http://example.com/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://example.com/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2021-12-05T20:26:36.000Z</published>
+    <updated>2021-12-07T00:36:28.319Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="2021-12-5-克隆GitHub远程仓库到本地"><a href="#2021-12-5-克隆GitHub远程仓库到本地" class="headerlink" title="2021-12-5  克隆GitHub远程仓库到本地"></a>2021-12-5  克隆GitHub远程仓库到本地</h6><p>今天清理了下GitHub的仓库，只有两个想保留的，干脆就把原来的文件夹整个删了，因为我之前保存的格式是这样的：D:/github/reop1，D:/github/reop2，…。</p><p>新建文件夹：D:/GitHub，右键Git Bash Here，然后输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs G">git clone git@github.com:jiangxyz/test_githublottery.git<br></code></pre></td></tr></table></figure><p>clone后的SSH地址直接在GitHub上复制即可。</p><p>随后修改README.md，进行推送测试，一切正常。</p>]]></content>
+    
+    
+    <summary type="html">记录我在使用Git过程中的问题和常用命令。</summary>
+    
+    
+    
+    <category term="long-time" scheme="http://example.com/categories/long-time/"/>
+    
+    
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Github" scheme="http://example.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MATLAB_&lt;1&gt;_四个小问题</title>
+    <link href="http://example.com/2021/12/05/MATLAB_1_%E5%9B%9B%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2021/12/05/MATLAB_1_%E5%9B%9B%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
+    <published>2021-12-05T08:50:58.000Z</published>
+    <updated>2021-12-06T01:45:37.077Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><a href="#20211103--bpsk信号的产生">20211103  BPSK信号的产生</a></li><li><a href="#20211114--box-muller变换">20211114  Box-Muller变换</a></li><li><a href="#20211124--matlab的fft">20211124  MATLAB的FFT</a></li><li><a href="#20211127--距离模糊">20211127  距离模糊</a></li></ul><hr><h4 id="20211103-BPSK信号的产生"><a href="#20211103-BPSK信号的产生" class="headerlink" title="20211103  BPSK信号的产生"></a>20211103  BPSK信号的产生</h4><p>今天在写实验报告时有一个生成BPSK的信号.m文件，他在为每个码元设置对应的余弦波形时用了这样的语法，感觉很流畅，特地记录。</p><figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:len_code<br>    tmp = str2num(binary_code(<span class="hljs-built_in">i</span>));<br>    <span class="hljs-keyword">if</span> tmp == <span class="hljs-number">0</span><br>        y_bpsk = [y_bpsk,y_mayuan];<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> tmp == <span class="hljs-number">1</span><br>        y_bpsk = [y_bpsk,-y_mayuan];<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure><p>按照我的惯用思路，大概会是用C语言那种先生成一个空的数组，再进行填充。str2num()之前我也没怎么用过。</p><h4 id="20211114-Box-Muller变换"><a href="#20211114-Box-Muller变换" class="headerlink" title="20211114  Box-Muller变换"></a>20211114  Box-Muller变换</h4><p>今天写实验报告给信号加噪声想到了一个问题，如何用均匀分布的随机变量来产生高斯分布（主要是这两个用MATLAB产生时差点搞混了）。</p><p>经过搜索，找到了一个方法：<strong>Box-Muller变换</strong></p><p>具体推导可参阅<a href="https://zhuanlan.zhihu.com/p/38638710">这篇文章</a></p><p>代码如下</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">clc,clear<br>close all<br>n = <span class="hljs-number">10000</span>; <br>U1 = <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,n);     <br>U2 = <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,n);<br>X = <span class="hljs-built_in">cos</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>*U1).*<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">-2</span>*<span class="hljs-built_in">log</span>(U2)); <span class="hljs-comment">% 标准正态分布</span><br>Y = <span class="hljs-built_in">sin</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>*U1).*<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">-2</span>*<span class="hljs-built_in">log</span>(U2)); <span class="hljs-comment">% 标准正态分布</span><br><span class="hljs-comment">%-------plot---------</span><br>h1 = histogram(X,<span class="hljs-number">30</span>);<br><span class="hljs-built_in">figure</span>;<br>h2 = histogram(Y,<span class="hljs-number">30</span>);<br></code></pre></td></tr></table></figure><p>画出的两个直方图如下</p><center class = "half" >    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "40%" /><img src = "https://s2.loli.net/2021/12/05/HYGklDAdQLwTZb1.png" width = "40%" /></center><p>看起来效果还不错。</p><h4 id="20211124-MATLAB的FFT"><a href="#20211124-MATLAB的FFT" class="headerlink" title="20211124  MATLAB的FFT"></a>20211124  MATLAB的FFT</h4><p>前几天做了匹配滤波的仿真实验，用到了MATLAB的fft()，把之前不懂的记录一下。</p><p>首先是对于傅里叶变换的<a href="https://www.zhihu.com/question/264302905/answer/1085568573">一个理解</a>，直接截图放在下面。</p><center>    <img src="https://s2.loli.net/2021/12/05/rAdcaieTxyUfBYE.png" alt="" style="zoom:67%;" /></center><p>第一次看不理解内积为什么这么定义，找到了<a href="https://zhuanlan.zhihu.com/p/148949131">这篇文章</a>，把最需要的部分贴在下面</p><center>    <img src="https://s2.loli.net/2021/12/05/Lt4jR9paz3XSfgd.png" alt="" style="zoom:67%;" /></center><p>然后又不知道F域是什么了，又找到了<a href="https://zhuanlan.zhihu.com/p/261884753">这篇文章</a>，数域的定义如下</p><center>    <img src="https://s2.loli.net/2021/12/05/SNsEwzc4Mo1YnFD.png" alt="" style="zoom:67%;" /></center><p>以前一直不清楚傅里叶变换后得到的频谱幅值，为什么要对fft的结果除N/2。参考<a href="https://www.zhihu.com/question/421248452/answer/1493774154">这个回答</a>，我动手试了下</p><center>    <img src="https://s2.loli.net/2021/12/05/wG3marqhpCbsxtn.png" alt="" style="zoom:50%;" /></center><p>采样率为100Hz，采样点数分别为400、800、1200和1600，可以看出幅度大概是等于N/2的。但是该回答并没有细致解释为什么除N/2，我又找到了<a href="https://zhuanlan.zhihu.com/p/137433994">另一篇文章</a>，但是没看懂…，不过他的说法和MATLAB的fft文档是一致的，尤其是对于首尾两个点的处理。还是在以后的应用中加深理解吧。</p><h4 id="20211127-距离模糊"><a href="#20211127-距离模糊" class="headerlink" title="20211127  距离模糊"></a>20211127  距离模糊</h4><p>距离模糊的概念还是很容易理解的，解距离模糊用的是多重频方法，参考<a href="https://blog.csdn.net/Differoucius/article/details/120856391">这篇文章</a>，有几点要指出来。</p><ul><li>t<sub>1</sub>和t<sub>2</sub>是指回波脉冲相对于前一个PRI的时延，即对于PRF1，在完成了M<sub>1</sub>个PRI后又过了t<sub>1</sub>接收到了一个回波脉冲，t<sub>2</sub>同理。</li><li>为什么要么M<sub>1</sub> = M<sub>2</sub>，要么M<sub>1</sub> = M<sub>2</sub>-1。这篇文章里的PRI<sub>1</sub> &gt; PRI<sub>2</sub>，那么必然有M<sub>1</sub> &lt;= M<sub>2</sub>，且最多差一，因为对于二重频（即两个PRI），通常采用Nf<sub>rd</sub>和(N+1)f<sub>rd</sub>。对于三重频则采用N(N+1)f<sub>rd</sub> 、N(N+2)f<sub>rd</sub> 和(N+1)(N+2)f<sub>rd</sub> 。</li></ul>]]></content>
+    
+    
+    <summary type="html">这4个小问题是我在写作业时遇到的，原本记录在GitHub的一个仓库里，现在有了个人博客，就将它迁移到这里。</summary>
+    
+    
+    
+    <category term="MATLAB" scheme="http://example.com/categories/MATLAB/"/>
+    
+    
+    <category term="Radar" scheme="http://example.com/tags/Radar/"/>
+    
+    <category term="Signal Processing" scheme="http://example.com/tags/Signal-Processing/"/>
+    
+    <category term="Statistics" scheme="http://example.com/tags/Statistics/"/>
+    
+    <category term="MATLAB" scheme="http://example.com/tags/MATLAB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开始</title>
+    <link href="http://example.com/2021/12/04/%E5%BC%80%E5%A7%8B/"/>
+    <id>http://example.com/2021/12/04/%E5%BC%80%E5%A7%8B/</id>
+    <published>2021-12-04T09:31:36.000Z</published>
+    <updated>2021-12-07T00:44:35.835Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>今天尝试了下<strong>hexo</strong>+<strong>GitHub</strong>搭建个人博客，还是蛮有意思的。相关的教程很多，具体过程我就不再赘述了。现在博客还很简陋，也没有内容，但我会把点滴变化都记录在这篇文章中。有什么问题或者好的建议欢迎各位在下方评论，看到会及时回复的。</p><h4 id="2021-12-4"><a href="#2021-12-4" class="headerlink" title="2021-12-4"></a>2021-12-4</h4><ul><li><p>主题使用了<a href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a>。</p></li><li><p>网站图标是在<a href="https://icons8.cn/icons">Icons8</a>找的。</p></li><li><p>页面顶部大图的图是之前存的，具体来源忘记了。</p></li><li><p>使用的评论模块是disqus。</p><p>安卓移动端浏览文章无评论模块。</p></li><li><p>在关于页可通过<strong>GitHub</strong>或<strong>Gmail</strong>联系我。</p></li></ul><h4 id="2021-12-5"><a href="#2021-12-5" class="headerlink" title="2021-12-5"></a>2021-12-5</h4><ul><li><p>用<a href="https://sm.ms/">sm.ms</a>作为个人图床。</p><p>免费的5G应该可以用很久，本想用七牛云，但是必须得在一个月内添加备案过的域名，无奈暂时放弃。配合<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>使用，非常方便。</p></li><li><p>上传了一篇文章<a href="https://jiangxyz.github.io/2021/12/05/MATLAB_1_四个小问题/">《MATLAB<em><1></em>四个小问题》</a></p></li><li><p>尝试使用了tags和categories。</p></li><li><p>新开了<a href="https://jiangxyz.github.io/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">《Git常用命令》</a>的坑。</p></li></ul><h4 id="2021-12-6"><a href="#2021-12-6" class="headerlink" title="2021-12-6"></a>2021-12-6</h4><ul><li><a href="https://jiangxyz.github.io/2021/12/06/Typora%E8%AF%AD%E6%B3%95/">《Typora语法》</a></li><li><a href="https://jiangxyz.github.io/2021/12/07/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/">《信号处理中的一些概念》</a></li><li>使用mathjax引擎对文章中的latex公式进行渲染。</li></ul><h4 id="2021-12-7"><a href="#2021-12-7" class="headerlink" title="2021-12-7"></a>2021-12-7</h4><ul><li>决定发文章的事情不在此处更新了。</li></ul>]]></content>
+    
+    
+    <summary type="html">这是我的第一篇博客，欢迎你！</summary>
+    
+    
+    
+    <category term="long-time" scheme="http://example.com/categories/long-time/"/>
+    
+    
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
+  </entry>
+  
+</feed>

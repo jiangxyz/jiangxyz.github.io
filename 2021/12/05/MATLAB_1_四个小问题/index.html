@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Glaube">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="这4个小问题是我在写作业时遇到的，原本记录在GitHub的一个仓库里，现在有了个人博客，就将它迁移到这里。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB_&lt;1&gt;_四个小问题">
+<meta property="og:url" content="http://example.com/2021/12/05/MATLAB_1_%E5%9B%9B%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Glaube&#39;s blog">
+<meta property="og:description" content="这4个小问题是我在写作业时遇到的，原本记录在GitHub的一个仓库里，现在有了个人博客，就将它迁移到这里。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png">
+<meta property="article:published_time" content="2021-12-05T08:50:58.000Z">
+<meta property="article:modified_time" content="2021-12-06T01:45:37.077Z">
+<meta property="article:author" content="Glaube">
+<meta property="article:tag" content="Radar">
+<meta property="article:tag" content="Signal Processing">
+<meta property="article:tag" content="Statistics">
+<meta property="article:tag" content="MATLAB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png">
+  
+  
+  <title>MATLAB_&lt;1&gt;_四个小问题 - Glaube&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="Glaube's blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="MATLAB_&lt;1&gt;_四个小问题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-05 08:50" pubdate>
+        December 5, 2021 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MATLAB_&lt;1&gt;_四个小问题</h1>
+            
+            <div class="markdown-body">
+              <ul>
+<li><a href="#20211103--bpsk信号的产生">20211103  BPSK信号的产生</a></li>
+<li><a href="#20211114--box-muller变换">20211114  Box-Muller变换</a></li>
+<li><a href="#20211124--matlab的fft">20211124  MATLAB的FFT</a></li>
+<li><a href="#20211127--距离模糊">20211127  距离模糊</a></li>
+</ul>
+<hr>
+<h4 id="20211103-BPSK信号的产生"><a href="#20211103-BPSK信号的产生" class="headerlink" title="20211103  BPSK信号的产生"></a>20211103  BPSK信号的产生</h4><p>今天在写实验报告时有一个生成BPSK的信号.m文件，他在为每个码元设置对应的余弦波形时用了这样的语法，感觉很流畅，特地记录。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:len_code<br>    tmp = str2num(binary_code(<span class="hljs-built_in">i</span>));<br>    <span class="hljs-keyword">if</span> tmp == <span class="hljs-number">0</span><br>        y_bpsk = [y_bpsk,y_mayuan];<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> tmp == <span class="hljs-number">1</span><br>        y_bpsk = [y_bpsk,-y_mayuan];<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<p>按照我的惯用思路，大概会是用C语言那种先生成一个空的数组，再进行填充。str2num()之前我也没怎么用过。</p>
+<h4 id="20211114-Box-Muller变换"><a href="#20211114-Box-Muller变换" class="headerlink" title="20211114  Box-Muller变换"></a>20211114  Box-Muller变换</h4><p>今天写实验报告给信号加噪声想到了一个问题，如何用均匀分布的随机变量来产生高斯分布（主要是这两个用MATLAB产生时差点搞混了）。</p>
+<p>经过搜索，找到了一个方法：<strong>Box-Muller变换</strong></p>
+<p>具体推导可参阅<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38638710">这篇文章</a></p>
+<p>代码如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">clc,clear<br>close all<br>n = <span class="hljs-number">10000</span>; <br>U1 = <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,n);     <br>U2 = <span class="hljs-built_in">rand</span>(<span class="hljs-number">1</span>,n);<br>X = <span class="hljs-built_in">cos</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>*U1).*<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">-2</span>*<span class="hljs-built_in">log</span>(U2)); <span class="hljs-comment">% 标准正态分布</span><br>Y = <span class="hljs-built_in">sin</span>(<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>*U1).*<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">-2</span>*<span class="hljs-built_in">log</span>(U2)); <span class="hljs-comment">% 标准正态分布</span><br><span class="hljs-comment">%-------plot---------</span><br>h1 = histogram(X,<span class="hljs-number">30</span>);<br><span class="hljs-built_in">figure</span>;<br>h2 = histogram(Y,<span class="hljs-number">30</span>);<br></code></pre></td></tr></table></figure>
+<p>画出的两个直方图如下</p>
+<center class = "half" >
+    <img src = "https://s2.loli.net/2021/12/05/OWDlrvu6a9nwQ8S.png" width = "40%" /><img src = "https://s2.loli.net/2021/12/05/HYGklDAdQLwTZb1.png" width = "40%" />
+</center>
+
+<p>看起来效果还不错。</p>
+<h4 id="20211124-MATLAB的FFT"><a href="#20211124-MATLAB的FFT" class="headerlink" title="20211124  MATLAB的FFT"></a>20211124  MATLAB的FFT</h4><p>前几天做了匹配滤波的仿真实验，用到了MATLAB的fft()，把之前不懂的记录一下。</p>
+<p>首先是对于傅里叶变换的<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/264302905/answer/1085568573">一个理解</a>，直接截图放在下面。</p>
+<center>
+    <img src="https://s2.loli.net/2021/12/05/rAdcaieTxyUfBYE.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:67%;" />
+</center>
+
+<p>第一次看不理解内积为什么这么定义，找到了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/148949131">这篇文章</a>，把最需要的部分贴在下面</p>
+<center>
+    <img src="https://s2.loli.net/2021/12/05/Lt4jR9paz3XSfgd.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:67%;" />
+</center>
+
+<p>然后又不知道F域是什么了，又找到了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/261884753">这篇文章</a>，数域的定义如下</p>
+<center>
+    <img src="https://s2.loli.net/2021/12/05/SNsEwzc4Mo1YnFD.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:67%;" />
+</center>
+
+<p>以前一直不清楚傅里叶变换后得到的频谱幅值，为什么要对fft的结果除N/2。参考<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/421248452/answer/1493774154">这个回答</a>，我动手试了下</p>
+<center>
+    <img src="https://s2.loli.net/2021/12/05/wG3marqhpCbsxtn.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" />
+</center>
+
+<p>采样率为100Hz，采样点数分别为400、800、1200和1600，可以看出幅度大概是等于N/2的。但是该回答并没有细致解释为什么除N/2，我又找到了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137433994">另一篇文章</a>，但是没看懂…，不过他的说法和MATLAB的fft文档是一致的，尤其是对于首尾两个点的处理。还是在以后的应用中加深理解吧。</p>
+<h4 id="20211127-距离模糊"><a href="#20211127-距离模糊" class="headerlink" title="20211127  距离模糊"></a>20211127  距离模糊</h4><p>距离模糊的概念还是很容易理解的，解距离模糊用的是多重频方法，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/Differoucius/article/details/120856391">这篇文章</a>，有几点要指出来。</p>
+<ul>
+<li>t<sub>1</sub>和t<sub>2</sub>是指回波脉冲相对于前一个PRI的时延，即对于PRF1，在完成了M<sub>1</sub>个PRI后又过了t<sub>1</sub>接收到了一个回波脉冲，t<sub>2</sub>同理。</li>
+<li>为什么要么M<sub>1</sub> = M<sub>2</sub>，要么M<sub>1</sub> = M<sub>2</sub>-1。这篇文章里的PRI<sub>1</sub> &gt; PRI<sub>2</sub>，那么必然有M<sub>1</sub> &lt;= M<sub>2</sub>，且最多差一，因为对于二重频（即两个PRI），通常采用Nf<sub>rd</sub>和(N+1)f<sub>rd</sub>。对于三重频则采用N(N+1)f<sub>rd</sub> 、N(N+2)f<sub>rd</sub> 和(N+1)(N+2)f<sub>rd</sub> 。</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/MATLAB/">MATLAB</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Radar/">Radar</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Signal-Processing/">Signal Processing</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Statistics/">Statistics</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MATLAB/">MATLAB</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git常用命令</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/04/%E5%BC%80%E5%A7%8B/">
+                        <span class="hidden-mobile">开始</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
