@@ -56,11 +56,11 @@
     <category term="Signal Processing" scheme="http://example.com/categories/Signal-Processing/"/>
     
     
+    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
+    
     <category term="Radar" scheme="http://example.com/tags/Radar/"/>
     
     <category term="Signal Processing" scheme="http://example.com/tags/Signal-Processing/"/>
-    
-    <category term="long-time" scheme="http://example.com/tags/long-time/"/>
     
   </entry>
   

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git常用命令</title>
+    <url>/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h6 id="2021-12-5-克隆GitHub远程仓库到本地"><a href="#2021-12-5-克隆GitHub远程仓库到本地" class="headerlink" title="2021-12-5  克隆GitHub远程仓库到本地"></a>2021-12-5  克隆GitHub远程仓库到本地</h6><p>今天清理了下GitHub的仓库，只有两个想保留的，干脆就把原来的文件夹整个删了，因为我之前保存的格式是这样的：D:/github/reop1，D:/github/reop2，…。</p>
+<p>新建文件夹：D:/GitHub，右键Git Bash Here，然后输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs G">git clone git@github.com:jiangxyz/test_githublottery.git<br></code></pre></td></tr></table></figure>
+<p>clone后的SSH地址直接在GitHub上复制即可。</p>
+<p>随后修改README.md，进行推送测试，一切正常。</p>
+]]></content>
+      <categories>
+        <category>long-time</category>
+      </categories>
+      <tags>
+        <tag>long-time</tag>
+        <tag>Git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MATLAB_&lt;1&gt;_四个小问题</title>
     <url>/2021/12/05/MATLAB_1_%E5%9B%9B%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<ul>
@@ -63,21 +81,17 @@
       </tags>
   </entry>
   <entry>
-    <title>Git常用命令</title>
-    <url>/2021/12/06/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h6 id="2021-12-5-克隆GitHub远程仓库到本地"><a href="#2021-12-5-克隆GitHub远程仓库到本地" class="headerlink" title="2021-12-5  克隆GitHub远程仓库到本地"></a>2021-12-5  克隆GitHub远程仓库到本地</h6><p>今天清理了下GitHub的仓库，只有两个想保留的，干脆就把原来的文件夹整个删了，因为我之前保存的格式是这样的：D:/github/reop1，D:/github/reop2，…。</p>
-<p>新建文件夹：D:/GitHub，右键Git Bash Here，然后输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs G">git clone git@github.com:jiangxyz/test_githublottery.git<br></code></pre></td></tr></table></figure>
-<p>clone后的SSH地址直接在GitHub上复制即可。</p>
-<p>随后修改README.md，进行推送测试，一切正常。</p>
+    <title>VScode问题汇总</title>
+    <url>/2021/12/07/VScode%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<h4 id="2021-12-7"><a href="#2021-12-7" class="headerlink" title="2021-12-7"></a>2021-12-7</h4><h5 id="workspace"><a href="#workspace" class="headerlink" title="workspace"></a>workspace</h5><p>前几天在写一个课程的大作业时用了latex，因为初次使用，有很多不懂的。使用的工具是Texlive+VScode+sumatraPDF，看着大佬的教程本来一切都很顺利，但下午准备接着写的时候莫名其妙的报错了，也没Google到相关信息。我以为是自己改动模板的原因，于是把之前下载的模板解压又编译了以下，同样报错。经过摸索，最后发现了问题：之前看的教程是把Latex的配置文件放在工作区的.code-workspace中的，我后来打开的时候直接打开了.tex和.sty文件，所以会报错。</p>
+<p><strong>解决方法</strong>：在对应文件夹下打开.code-workspace文件，进入工作区，再做你想做的事情。</p>
 ]]></content>
       <categories>
         <category>long-time</category>
       </categories>
       <tags>
         <tag>long-time</tag>
-        <tag>Git</tag>
-        <tag>Github</tag>
+        <tag>VScode</tag>
       </tags>
   </entry>
   <entry>
@@ -122,59 +136,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VScode问题汇总</title>
-    <url>/2021/12/07/VScode%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
-    <content><![CDATA[<h4 id="2021-12-7"><a href="#2021-12-7" class="headerlink" title="2021-12-7"></a>2021-12-7</h4><h5 id="workspace"><a href="#workspace" class="headerlink" title="workspace"></a>workspace</h5><p>前几天在写一个课程的大作业时用了latex，因为初次使用，有很多不懂的。使用的工具是Texlive+VScode+sumatraPDF，看着大佬的教程本来一切都很顺利，但下午准备接着写的时候莫名其妙的报错了，也没Google到相关信息。我以为是自己改动模板的原因，于是把之前下载的模板解压又编译了以下，同样报错。经过摸索，最后发现了问题：之前看的教程是把Latex的配置文件放在工作区的.code-workspace中的，我后来打开的时候直接打开了.tex和.sty文件，所以会报错。</p>
-<p><strong>解决方法</strong>：在对应文件夹下打开.code-workspace文件，进入工作区，再做你想做的事情。</p>
-]]></content>
-      <categories>
-        <category>long-time</category>
-      </categories>
-      <tags>
-        <tag>long-time</tag>
-        <tag>VScode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>信号处理中的一些概念</title>
-    <url>/2021/12/07/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3><p>以下内容可能存在错误，请带着批判的眼光阅读。我在发现错误或有新理解后会持续更新。</p>
-<h3 id="2021-12-6"><a href="#2021-12-6" class="headerlink" title="2021-12-6"></a>2021-12-6</h3><h4 id="SIR-SCR-SNR"><a href="#SIR-SCR-SNR" class="headerlink" title="SIR SCR SNR"></a>SIR SCR SNR</h4><p>最近在看雷达信号处理基础（第二版）这本书，有三个概念：<strong>SIR（Signal-to-Interference ratio）</strong>、<strong>SCR（Signal-to-Clutter ratio）</strong>和<strong>SNR（Signal-to-noise ratio）</strong>。</p>
-<p>先说信噪比SNR，这个是三个概念中最常见的，为有用信号功率和噪声功率的比值，即</p>
-<script type="math/tex; mode=display">
-\mathrm{SNR}=\frac{P_{\text {signal }}}{P_{\text {noise }}}</script><p>对于一个信号，它由期望信号和干扰信号组成，信干比SIR为期望信号功率和干扰信号功率的比值，即</p>
-<script type="math/tex; mode=display">
-\mathrm{SIR}=\frac{P_{\text {signal}}}{P_{\text {interference}}}</script><p>这是传统的SIR，另一种变异版本为能量SIR，定义为期望信号的总能量和干扰信号声功率之比，即</p>
-<script type="math/tex; mode=display">
-\mathrm{SIR}=\frac{E_{\text {signal}}}{P_{\text {interference}}}</script><p>信杂比SCR是接收信号功率与接收杂波功率之比。在很多情况下，影响雷达检测性能的主要干扰是杂波而不是噪声，所以SCR往往比SNR更有用。</p>
-<script type="math/tex; mode=display">
-\mathrm{SCR}=\frac{P_{\text {receive}}}{P_{\text {clutter}}}</script><h4 id="sinc-asinc"><a href="#sinc-asinc" class="headerlink" title="sinc  asinc"></a>sinc  asinc</h4><p>在数字信号中，使用<strong>归一化的sinc函数</strong>，通常定义为</p>
-<script type="math/tex; mode=display">
-\operatorname{sinc}(x)=\frac{\sin (\pi x)}{\pi x}</script><p>在数学中则使用<strong>非归一化的sinc函数</strong>，定义为</p>
-<script type="math/tex; mode=display">
-\operatorname{sinc}(x)=\frac{\sin (x)}{x}</script><p>雷达信号处理基础（第二版）这本书中提到了asinc，即混叠sinc函数，我在Google上没搜到相关概念，中译版的脚注（P193）上说是sinc函数的离散形式，又叫做狄利克雷函数。</p>
-<h3 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021-12-10"></a>2021-12-10</h3><h4 id="一个等比数列求和"><a href="#一个等比数列求和" class="headerlink" title="一个等比数列求和"></a>一个等比数列求和</h4><p>最近看书经常见到这个等比数列，之前学天线原理的时候也是，记录一下</p>
-<script type="math/tex; mode=display">
-\sum_{m=0}^{M-1} e^{-j(\omega-\omega_{0}) m} = 
-\tfrac{\sin\left[(\omega -\omega_{0})\frac{M}{2}] \right]}
-{\sin \left[(\omega -\omega_{0})\frac{1}{2} \right]} 
-{e^{[-j(\omega-\omega_{0}) \frac{M-1}{2}]}}</script><h4 id="一个ln的展开式"><a href="#一个ln的展开式" class="headerlink" title="一个ln的展开式"></a>一个ln的展开式</h4><p>见到了一个不太常见的ln(x)在x=1处的展开式：</p>
-<script type="math/tex; mode=display">
-ln(x) = \frac{x-1}{x} + \frac{1}{2} (\frac{x-1}{x})^{2}+...+\frac{1}{n} (\frac{x-1}{x})^{n}+...</script><p>推导过程：</p>
-<script type="math/tex; mode=display">
-ln(x) = -ln(\frac{1}{x})
-= -ln(1-\frac{x-1}{x})
-= \sum_{n=1}^{\infty} \frac{(\frac{x-1}{x})^{n}}{n}</script>]]></content>
-      <categories>
-        <category>Signal Processing</category>
-      </categories>
-      <tags>
-        <tag>Radar</tag>
-        <tag>Signal Processing</tag>
-        <tag>long-time</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>开始</title>
     <url>/2021/12/04/%E5%BC%80%E5%A7%8B/</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>今天尝试了下<strong>hexo</strong>+<strong>GitHub</strong>搭建个人博客，还是蛮有意思的。相关的教程很多，具体过程我就不再赘述了。现在博客还很简陋，也没有内容，但我会把点滴变化都记录在这篇文章中。有什么问题或者好的建议欢迎各位在下方评论，看到会及时回复的。</p>
@@ -216,6 +177,45 @@ ln(x) = -ln(\frac{1}{x})
       </categories>
       <tags>
         <tag>long-time</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信号处理中的一些概念</title>
+    <url>/2021/12/07/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h3 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h3><p>以下内容可能存在错误，请带着批判的眼光阅读。我在发现错误或有新理解后会持续更新。</p>
+<h3 id="2021-12-6"><a href="#2021-12-6" class="headerlink" title="2021-12-6"></a>2021-12-6</h3><h4 id="SIR-SCR-SNR"><a href="#SIR-SCR-SNR" class="headerlink" title="SIR SCR SNR"></a>SIR SCR SNR</h4><p>最近在看雷达信号处理基础（第二版）这本书，有三个概念：<strong>SIR（Signal-to-Interference ratio）</strong>、<strong>SCR（Signal-to-Clutter ratio）</strong>和<strong>SNR（Signal-to-noise ratio）</strong>。</p>
+<p>先说信噪比SNR，这个是三个概念中最常见的，为有用信号功率和噪声功率的比值，即</p>
+<script type="math/tex; mode=display">
+\mathrm{SNR}=\frac{P_{\text {signal }}}{P_{\text {noise }}}</script><p>对于一个信号，它由期望信号和干扰信号组成，信干比SIR为期望信号功率和干扰信号功率的比值，即</p>
+<script type="math/tex; mode=display">
+\mathrm{SIR}=\frac{P_{\text {signal}}}{P_{\text {interference}}}</script><p>这是传统的SIR，另一种变异版本为能量SIR，定义为期望信号的总能量和干扰信号声功率之比，即</p>
+<script type="math/tex; mode=display">
+\mathrm{SIR}=\frac{E_{\text {signal}}}{P_{\text {interference}}}</script><p>信杂比SCR是接收信号功率与接收杂波功率之比。在很多情况下，影响雷达检测性能的主要干扰是杂波而不是噪声，所以SCR往往比SNR更有用。</p>
+<script type="math/tex; mode=display">
+\mathrm{SCR}=\frac{P_{\text {receive}}}{P_{\text {clutter}}}</script><h4 id="sinc-asinc"><a href="#sinc-asinc" class="headerlink" title="sinc  asinc"></a>sinc  asinc</h4><p>在数字信号中，使用<strong>归一化的sinc函数</strong>，通常定义为</p>
+<script type="math/tex; mode=display">
+\operatorname{sinc}(x)=\frac{\sin (\pi x)}{\pi x}</script><p>在数学中则使用<strong>非归一化的sinc函数</strong>，定义为</p>
+<script type="math/tex; mode=display">
+\operatorname{sinc}(x)=\frac{\sin (x)}{x}</script><p>雷达信号处理基础（第二版）这本书中提到了asinc，即混叠sinc函数，我在Google上没搜到相关概念，中译版的脚注（P193）上说是sinc函数的离散形式，又叫做狄利克雷函数。</p>
+<h3 id="2021-12-10"><a href="#2021-12-10" class="headerlink" title="2021-12-10"></a>2021-12-10</h3><h4 id="一个等比数列求和"><a href="#一个等比数列求和" class="headerlink" title="一个等比数列求和"></a>一个等比数列求和</h4><p>最近看书经常见到这个等比数列，之前学天线原理的时候也是，记录一下</p>
+<script type="math/tex; mode=display">
+\sum_{m=0}^{M-1} e^{-j(\omega-\omega_{0}) m} = 
+\tfrac{\sin\left[(\omega -\omega_{0})\frac{M}{2}] \right]}
+{\sin \left[(\omega -\omega_{0})\frac{1}{2} \right]} 
+{e^{[-j(\omega-\omega_{0}) \frac{M-1}{2}]}}</script><h4 id="一个ln的展开式"><a href="#一个ln的展开式" class="headerlink" title="一个ln的展开式"></a>一个ln的展开式</h4><p>见到了一个不太常见的ln(x)在x=1处的展开式：</p>
+<script type="math/tex; mode=display">
+ln(x) = \frac{x-1}{x} + \frac{1}{2} (\frac{x-1}{x})^{2}+...+\frac{1}{n} (\frac{x-1}{x})^{n}+...</script><p>推导过程：</p>
+<script type="math/tex; mode=display">
+ln(x) = -ln(\frac{1}{x})
+= -ln(1-\frac{x-1}{x})
+= \sum_{n=1}^{\infty} \frac{(\frac{x-1}{x})^{n}}{n}</script>]]></content>
+      <categories>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>long-time</tag>
+        <tag>Radar</tag>
+        <tag>Signal Processing</tag>
       </tags>
   </entry>
 </search>
